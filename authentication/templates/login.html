@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Login</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static "assets/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "assets/vendor/bootstrap-icons/bootstrap-icons.css" %}" rel="stylesheet">
+    <link href="{% static "assets/vendor/boxicons/css/boxicons.min.css" %}" rel="stylesheet">
+    <link href="{% static "assets/vendor/glightbox/css/glightbox.min.css" %}" rel="stylesheet">
+    <link href="{% static "assets/vendor/swiper/swiper-bundle.min.css" %}" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="{% static "assets/css/index.css" %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+          integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+          integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <a href="{% url "index" %}" class="logo"><img
+                src="{% static "assets/img/SMART-INDIA-HACKATHON-2020 edited.png" %}" alt="" class="img-fluid"></a>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li class="dropdown"><a href="#"><span>Discover About SIH</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><span>SIH 2022</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">About SIH 2022</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">SIH 2022 Process Flow</a></li>
+                                <li><a href="#">SIH 2022 Themes</a></li>
+                                <li><a href="#">Problem Statements</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Past Editions</a></li>
+                        <li><a href="#">Learning Resources</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>News & Media</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><span>News Updates</span> <i
+                                class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">Address by PM</a></li>
+                                <li><a href="#">Press Conference</a></li>
+                                <li><a href="#">Speech and Interviews</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Social Wall</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Message</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="#services">Other Hackathons</a></li>
+                <li><a class="nav-link scrollto " href="#portfolio">Announcement</a></li>
+                <li><a class="nav-link scrollto" href="#team">Support</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'login' %}">Login/Register</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+
+
+<!---Form Section-->
+<div class="container pt-3"
+     style="background-image: url(https://c4.wallpaperflare.com/wallpaper/896/974/355/digital-art-simple-background-minimalism-vector-art-wallpaper-preview.jpg);border-radius: 30px;width: 100%;height: 80vh; text-align: center; margin-bottom: 10px; margin-top: 100px">
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="alert alert-danger">{{ message }}</div>
+                    {% else %}
+                    <div class="alert alert-success">{{ message }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="offset-md-2 offset-lg-2 col-lg-8 col-md-8 col-sm-12 col-xs-12">
+
+        <form class="needs-validation" method="POST" style="text-align: center !important;">
+            {% csrf_token %}
+            <div class="row type_margin" style="margin-top: 50px;">
+                <div class="offset-md-3 offset-md-3 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                    <div class="container-sm form-group" style="text-align: center">
+                        <h1 style="text-align: center;font-variant: normal; color: white">LOGIN</h1>
+                        <label for="exampleInputEmail1"></label><br>
+                        <input
+                                style="background-color: rgb(219, 217, 215);"
+                                type="email"
+                                class="form-control form-control-lg"
+                                id="exampleInputEmail1"
+                                name="login-email"
+                                aria-describedby="emailHelp"
+                                placeholder="Email"
+                                required
+                        />
+                        <div class="invalid-feedback">Please provide an email address</div>
+                    </div>
+                    <div class="container-sm form-group">
+                        <label for="exampleInputPassword1" style="font-weight: bold;"></label>
+                        <input
+                                type="password"
+                                style="background-color: rgb(219, 217, 215);"
+                                class="form-control form-control-lg"
+                                id="exampleInputPassword1"
+                                name="login-password"
+                                placeholder="Password"
+                                minlength="8"
+                                required
+                        />
+                        <div class="invalid-feedback">Please provide password of characters 8</div>
+                    </div>
+                    <br>
+                    <a href="#" style="text-decoration: none;">Forgot Password?</a>
+                    <div class="container-sm form-group" ><br>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 div_spacing" style="display: flex; align-items: center; justify-content: center;">
+                            <input type="submit" id="edit-submit" name="op" value="Submit "
+                                   class="form-control-login btn btn-success btn-lg">
+                        </div>
+
+        </form>
+        <div class="register-now" style="color: white;">
+             <a href="{% url "register-psc" %}" style="padding-left: 20px;text-decoration: none; text-align: center; ">Click
+                            Here</a> to create an account.
+        </div>
+    </div>
+</div>
+
+
+
+<!-- ======= Footer ======= -->
+{#<footer id="footer">#}
+{##}
+{#    <div class="footer-top">#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{##}
+{#                <div class="col-lg-3 col-md-6 footer-contact">#}
+{#                    <h3>CONTACT US</h3>#}
+{#                    <p>#}
+{#                        <strong>Phone:</strong> +91 20 40130777<br>#}
+{#                        <strong>Email:</strong> <a href="mailto:sih@aicte-india.org">sih@aicte-india.org</a><br>#}
+{#                    </p>#}
+{#                </div>#}
+{##}
+{#                <div class="col-lg-3 col-md-6 footer-links">#}
+{#                    <!-- <h4>Useful Links</h4> -->#}
+{#                    <!-- <ul>#}
+{#                      <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>#}
+{#                      <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>#}
+{#                      <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>#}
+{#                      <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>#}
+{#                      <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>#}
+{#                    </ul> -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-lg-3 col-md-6 footer-links">#}
+{#                    <!-- <h4>Our Services</h4>#}
+{#                    <ul>#}
+{#                      <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>#}
+{#                      <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>#}
+{#                      <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>#}
+{#                      <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>#}
+{#                      <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>#}
+{#                    </ul> -->#}
+{#                </div>#}
+{##}
+{#                <div class="col-lg-3 col-md-6 footer-links">#}
+{#                    <h4>FOLLOW US</h4>#}
+{#                    <div class="social-links mt-3">#}
+{#                        <a href="https://twitter.com/SIH_2020" class="twitter" target="_blank"><i#}
+{#                                class="bx bxl-twitter"></i></a>#}
+{#                        <a href="https://www.facebook.com/SmartIndiaHackathon2020/" class="facebook" target="_blank"><i#}
+{#                                class="bx bxl-facebook"></i></a>#}
+{#                        <a href="https://www.instagram.com/sih_2020/" class="instagram" target="_blank"><i#}
+{#                                class="bx bxl-instagram"></i></a>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <div class="container py-4">#}
+{#        <div class="copyright">#}
+{#            &copy; Copyright <strong><span> 2020 Smart India Hackathon.</span></strong> .All rights reserved#}
+{#        </div>#}
+{#        <div class="credits">#}
+{#            <a href="#">Smart India Hackathon App Download</a>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#</footer>#}
+<!-- End Footer -->
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        "use strict";
+        window.addEventListener(
+            "load",
+            function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName("needs-validation");
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(
+                    forms,
+                    function (form) {
+                        form.addEventListener(
+                            "submit",
+                            function (event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add("was-validated");
+                            },
+                            false
+                        );
+                    }
+                );
+            },
+            false
+        );
+    })();
+</script>
+</body>
+</html>

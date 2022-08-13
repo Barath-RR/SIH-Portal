@@ -1,0 +1,22 @@
+{% extends "base_problemstatementcreator.html" %}
+{% load static %}
+{% block content %}
+
+<br><br><br><br>
+    <section class="home-section">
+<div class="delete-container psc">
+    <div class="inner-delete">
+        <form action="" method="post" class="form-container">
+            {% csrf_token %}
+            <img src="{% static 'img/hourglass.png' %}" height="100px" width="100px" alt="" srcset="">
+            <p>Waiting for Approval</p>
+            <div class="delete-buttons">
+
+                <button type="button" class="cancel" onclick="location.href={% url "psc-dashboard" %}">Back</button>
+            </div>
+        </form>
+    </div>
+</div>
+    </section>
+<br><br><br>
+{% endblock %}

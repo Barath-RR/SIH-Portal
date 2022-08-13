@@ -1,0 +1,696 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Smart India Hackathon 2022</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static "landing/assets/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "landing/assets/vendor/bootstrap-icons/bootstrap-icons.css" %}" rel="stylesheet">
+  <link href="{% static "landing/assets/vendor/boxicons/css/boxicons.min.css" %}" rel="stylesheet">
+  <link href="{% static "landing/assets/vendor/glightbox/css/glightbox.min.css" %}" rel="stylesheet">
+  <link href="{% static "landing/assets/vendor/swiper/swiper-bundle.min.css" %}" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Template Main CSS File -->
+  <link href="{% static "landing/assets/css/index.css" %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "landing/assets/css/themes.css" %}">
+  <link rel="stylesheet" href="{% static "landing/assets/css/participation_tab.css" %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+    integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+    integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="{% url "index" %}" class="logo"><img src="{% static "landing/assets/img/SMART-INDIA-HACKATHON-2020 edited.png" %}" alt=""
+          class="img-fluid"></a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="dropdown"><a href="#"><span>Discover About SIH</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>SIH 2022</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="{% url "process_flow" %}">About SIH 2022</a></li>
+                  <li><a href="{% url "process_flow" %}#process-flow-cards">SIH 2022 Process Flow</a></li>
+                  <li><a href="{% url "process_flow" %}#themes-space">SIH 2022 Themes</a></li>
+                  <li><a href="{% url "process_flow" %}#">Problem Statements</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>News & Media</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>News Updates</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Address by PM</a></li>
+                  <li><a href="#">Press Conference</a></li>
+                  <li><a href="#">Speech and Interviews</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Social Wall</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Message</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#">Other Hackathons</a></li>
+          <li><a class="nav-link scrollto " href="#">Announcement</a></li>
+          <li><a class="nav-link scrollto" href="#">Support</a></li>
+          <li>{% if user.is_authenticated %}
+                <a href="{% url 'redirect' %}" class="nav-link"><button class="btn">{{ user }}<i class="fa fa-angle-right"></i></button></a>
+              {% else %}
+              <a href="{% url 'login' %}" class="nav-link"><button class="btn">Login<i class="fa fa-angle-right"></i></button></a>
+          {% endif %}</li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section>
+    <div class="banner-section">
+      <div class="banner-style">
+        <div id="owl-demo" class="owl-carousel owl-theme">
+          <div class="item"><img src="{% static "landing/assets/img/banner/SIH-slider-banner1.jpg" %}" alt=""></div>
+          <div class="item"><img src="{% static "landing/assets/img/banner/SIH-slider-banner2.jpg" %}" alt=""></div>
+          <div class="item"><img src="{% static "landing/assets/img/banner/SIH-slider-banner3.jpg" %}" alt=""></div>
+          <div class="item"><img src="{% static "landing/assets/img/banner/SIH-slider-banner4.jpg" %}" alt=""></div>
+          <div class="item"><img src="{% static "landing/assets/img/banner/SIH-slider-banner5.jpg" %}" alt=""></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="waves-background"></div>
+    <div class="wave-container">
+      <svg class="hero-waves" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .3)">
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .4)">
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+        </g>
+      </svg>
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#owl-demo").owlCarousel({
+        autoPlay: 1000,
+        autoplay: true,
+        loop: true,
+        nav: false,
+        dots: false,
+        items: 1,
+        autoplayHoverPause: false,
+        itemsDesktop: [1199, 3],
+        itemsDesktopSmall: [979, 3]
+      });
+    });
+  </script>
+  <main id="main">
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 d-flex justify-content-center video-box align-items-stretch position-relative">
+            <a href="https://youtu.be/Zkxmj7yLYuc" class="glightbox play-btn mb-4"></a>
+          </div>
+
+          <div
+            class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+            <h3>WHAT IS SIH?</h3>
+            <p>Smart India Hackathon is a nationwide initiative to provide students with a platform to solve some of the
+              pressing problems we face in our daily lives, and thus inculcate a culture of product innovation and a
+              mindset of problem-solving. The first three editions SIH2017, SIH2018 and SIH2019 proved to be extremely
+              successful in promoting innovation out-of-the-box thinking in young minds, especially engineering students
+              from across India.</p>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              <h4 class="title"><a href="">Students</a></h4>
+              <p class="description">Compete amongst one another as a team, offer technical solutions to real-world
+                problems and get a chance to win prizes worth up to 1,00,000.</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title"><a href="">Ministries & PSUs</a></h4>
+              <p class="description">Provide problem statements to the participants from all over the country , get
+                optimal solutions for them and also get the opportunity to hire potential future employees.</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-atom"></i></div>
+              <h4 class="title"><a href="">Private Organizations</a></h4>
+              <p class="description">Provide problem statements to the participants from all over the country , get
+                optimal solutions for them and also get the opportunity to hire potential future employees.</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-atom"></i></div>
+              <h4 class="title"><a href="">Institutes</a></h4>
+              <p class="description">An additional branding value when students from the institute compete at a national
+                level hackathon with other competitors.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <div class="features">
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="gap"></div>
+          <h3>SMART INDIA HACKATHON</h3>
+          <p>World’s biggest open platform for the innovators or entrepreneurs of tomorrow to start today towards a
+            smarter India</p>
+        </div>
+        <div class="grid-item">
+          <img class="feature-logo" src="{% static "landing/assets/img/thought.png" %}" alt="" srcset="">
+          <h3>Ingenious</h3>
+          <p>Harnessing creativity and expertise of students, academicians and visionaries</p>
+        </div>
+        <div class="grid-item">
+          <img class="feature-logo" src="{% static "landing/assets/img/protest.png" %}" alt="" srcset="">
+          <h3>Empowering</h3>
+          <p>Enabling possibilities and enhancing opportunities for citizens to deliver innovative solutions to India’s
+            daunting problems</p>
+        </div>
+        <div class="grid-item">
+          <img class="feature-logo" src="{% static "landing/assets/img/teamwork.png" %}" alt="" srcset="">
+          <h3>Collaborating</h3>
+          <p>Crowdsourcing intelligence for improving governance and quality of life</p>
+        </div>
+        <div class="grid-item">
+          <img class="feature-logo" src="{% static "landing/assets/img/responsibility.png" %}" alt="" srcset="">
+          <h3>Engaging</h3>
+          <p>Sparking institute-level hackathons, fuelling imagination</p>
+        </div>
+        <div class="grid-item">
+          <img class="feature-logo" src="{% static "landing/assets/img/ai.png" %}" alt="" srcset="">
+          <h3>Futuristic</h3>
+          <p>Building funnel for ‘Start-up India’ campaign</p>
+        </div>
+
+      </div>
+    </div>
+    <!-- features end -->
+
+    <section id="counts" class="counts">
+      <div class="container count-container" data-aos="fade-up">
+        <h2>SIH JOURNEY SO FAR FROM 2017</h2>
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="count-box">
+              <img src="{% static "landing/assets/img/reading.png" %}" alt="">
+              <div class="counter-row"><span data-purecounter-start="0" data-purecounter-end="1000000"
+                  data-purecounter-duration="1" class="purecounter"></span>
+                <p class="count-plus">+</p>
+              </div>
+              <p>Students</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <img src="{% static "landing/assets/img/books-stack-of-three.png" %}" alt="">
+              <div class="counter-row"><span data-purecounter-start="0" data-purecounter-end="7218"
+                  data-purecounter-duration="1" class="purecounter"></span>
+                <p class="count-plus">+</p>
+              </div>
+
+              <p>Institutes</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <img src="{% static "landing/assets/img/organization.png" %}" alt="">
+              <span data-purecounter-start="0" data-purecounter-end="256" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <p>Organizations</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-10">
+            <div class="count-box">
+              <img src="{% static "landing/assets/img/creativity.png" %}" alt="">
+              <span data-purecounter-start="0" data-purecounter-end="5635" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <p>Selected Ideas solutions</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-10">
+            <div class="count-box">
+              <img src="{% static "landing/assets/img/education.png" %}" alt="">
+              <div class="counter-row"><span data-purecounter-start="0" data-purecounter-end="1886"
+                  data-purecounter-duration="1" class="purecounter"></span>
+                <p class="count-plus">+</p>
+              </div>
+              <p>Problem Statements</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- End Counts Section -->
+    <section class="whats-new">
+      <div class="image-left">
+        <img src="{% static "landing/assets/img/whats_new_bg_2.png" %}" alt="" srcset="">
+      </div>
+
+      <div class="whats-new-col-2">
+        <h3>WHAT’S NEW IN SMART INDIA HACKATHON 2022</h3>
+        <p>SIH 2022 brings the next generation evolution by inclusion of new methodology to inculcate the culture of
+          startup and innovation ecosystem across different age groups i.e. are as follows:-</p>
+        <div class="row">
+          <div class="col box text1">
+            <h5>SIH Jr</h5>
+            <p>School students from 6th to 12th class will be able to showcase their talent and generate out-of-the-box
+              open innovation ideas</p>
+            <img class="img1" src="{% static "assets/img/sihJuniorIcon.png" %}" alt="">
+          </div>
+          <div class="col box text2">
+            <h5>SIH Sr</h5>
+            <p>An annual flagship event nurturing participants from all over India since 2017 with its software &
+              hardware edition journey of problem-solving attitude with a positive mindset.</p>
+            <img class="img2" src="{% static "assets/img/sihSeniorIcon.png" %}" alt="">
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+  </main>
+  <!-- End #main  -->
+
+  <section class="themes-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>Smart India Hackathon's</h4>
+          <h3>THEMES</h3>
+          <h5>No problem is too big... No idea is too small</h5>
+          <div id="themes-cards" class="owl-carousel">
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_sport.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Fitness & Sports</h3>
+                <p>Ideas that can boost fitness activities and assist in keeping fit.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_agriculture.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Transportation & Logistics</h3>
+                <p>Developing solutions, keeping in mind the need to enhance the primary sector of India - Agriculture
+                  and to manage and process our agriculture produce.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_drone.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Robotics & Drones</h3>
+                <p>There is a need to design drones and robots that can solve some of the pressing challenges of India
+                  such as handling medical emergencies, search and rescue operations, etc.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_heritage.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Heritage & cultural</h3>
+                <p>A solution/idea that can boost the current situation of the tourism industries including hotels,
+                  travel and others.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_technology.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Agriculture, FoodTech & Rural Development</h3>
+                <p>Ideas that showcase the rich cultural heritage and traditions of India.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_communication.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Smart Automation</h3>
+                <p>Ideas focused on the intelligent use of resources for transforming and advancements of technology
+                  with combining the artificial intelligence to explore more various sources and get valuable insights.
+                </p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_healthcare.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>MedTech, BioTech &amp; HealthTech</h3>
+                <p>Cutting-edge technology in these sectors continues to be in demand. Recent shifts in healthcare
+                  trends, growing populations also present an array of opportunities for innovation.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_automobiles.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Smart Vehicles</h3>
+                <p>Creating intelligent devices to improve commutation sector.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_waste.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Clean & Green Technology</h3>
+                <p>Solutions could be in the form of waste segregation, disposal, and improve sanitization system.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_tourism.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Tourism</h3>
+                <p>A solution/idea that can boost the current situation of the tourism industries including hotels,
+                  travel and others.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_renewable.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Renewable/sustainable Energy</h3>
+                <p>Innovative ideas that help manage and generate renewable /sustainable sources more efficiently.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_security.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Blockchain & Cybersecurity</h3>
+                <p>Provide ideas in a decentralized and distributed ledger technology used to store digital information
+                  that powers cryptocurrencies and NFTs and can radically change multiple sectors.</p>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="shadow-effect">
+                <img src="{% static "landing/assets/img/themes/icon_education.png" %}" alt="" srcset="">
+              </div>
+              <div class="theme-details">
+                <h3>Miscellaneous</h3>
+                <p>Technology ideas in tertiary sectors like Hospitality, Financial Services, Entertainment and Retail.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- participating tab -->
+
+  <div class="tabs">
+    <input type="radio" id="tab1" name="tab-control" checked>
+    <input type="radio" id="tab2" name="tab-control">
+    <input type="radio" id="tab3" name="tab-control">
+    <input type="radio" id="tab4" name="tab-control">
+    <ul>
+      <li title="Features"><label for="tab1" role="button"><br><span>CENTRAL MINISTRIES</span></label></li>
+      <li title="Delivery Contents"><label for="tab2" role="button"><br><span>STATE MINISTRIES</span></label></li>
+      <li title="Shipping"><label for="tab3" role="button"><br><span>INDUSTRIES</span></label></li>
+      <li title="Returns"><label for="tab4" role="button"><br><span>ORGANIZATIONS</span></label></li>
+    </ul>
+
+    <!-- <div class="slider">
+      <div class="indicator"></div>
+    </div> -->
+    <div class="content">
+      <section id="team" class="team section-bg-tab">
+        <div class="container" style="margin: 0; max-width: 90%; margin-left: 5%; margin-right: 5%;" data-aos="fade-up">
+          <div class="team-cards">
+            <div class="col d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="{% static "landing/assets/img/ministry/mini_logo.jpg" %}" class="img-fluid" alt="">
+                  <div class="social">
+                    <p>software: 4 </p>
+                    <p>hardware: 4 </p>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Ministry 1</h4>
+                  <span>Chief Executive Officer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="{% static "landing/assets/img/ministry/mini_logo.jpg" %}" class="img-fluid" alt="">
+                  <div class="social">
+                    <p>software: 4 </p>
+                    <p>hardware: 4 </p>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Ministry 1</h4>
+                  <span>Chief Executive Officer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="{% static "landing/assets/img/ministry/mini_logo.jpg" %}" class="img-fluid" alt="">
+                  <div class="social">
+                    <p>software: 4 </p>
+                    <p>hardware: 4 </p>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Ministry 1</h4>
+                  <span>Chief Executive Officer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="{% static "landing/assets/img/ministry/mini_logo.jpg" %}" class="img-fluid" alt="">
+                  <div class="social">
+                    <p>software: 4 </p>
+                    <p>hardware: 4 </p>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Ministry 1</h4>
+                  <span>Chief Executive Officer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="{% static "landing/assets/img/ministry/mini_logo.jpg" %}" class="img-fluid" alt="">
+                  <div class="social">
+                    <p>software: 4 </p>
+                    <p>hardware: 4 </p>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Ministry 1</h4>
+                  <span>Chief Executive Officer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="{% static "landing/assets/img/ministry/mini_logo.jpg" %}" class="img-fluid" alt="">
+                  <div class="social">
+                    <p>software: 4 </p>
+                    <p>hardware: 4 </p>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Ministry 1</h4>
+                  <span>Chief Executive Officer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="{% static "landing/assets/img/ministry/mini_logo.jpg" %}" class="img-fluid" alt="">
+                  <div class="social">
+                    <p>software: 4 </p>
+                    <p>hardware: 4 </p>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Ministry 1</h4>
+                  <span>Chief Executive Officer</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="{% static "landing/assets/img/ministry/mini_logo.jpg" %}" class="img-fluid" alt="">
+                  <div class="social">
+                    <p>software: 4 </p>
+                    <p>hardware: 4 </p>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Ministry 1</h4>
+                  <span>Chief Executive Officer</span>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+      <!-- End Ministry Section -->
+    </div>
+  </div>
+
+  <!-- ends -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>CONTACT US</h3>
+            <p>
+              <strong>Phone:</strong> +91 20 40130777<br>
+              <strong>Email:</strong> <a href="mailto:sih@aicte-india.org">sih@aicte-india.org</a><br>
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>FOLLOW US</h4>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/SIH_2020" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/SmartIndiaHackathon2020/" class="facebook" target="_blank"><i
+                  class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/sih_2020/" class="instagram" target="_blank"><i
+                  class="bx bxl-instagram"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span> 2020 Smart India Hackathon.</span></strong> .All rights reserved
+      </div>
+      <div class="credits">
+        <a href="#">Smart India Hackathon App Download</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+  <script src="{% static "landing/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "landing/assets/vendor/glightbox/js/glightbox.min.js" %}"></script>
+  <script src="{% static "landing/assets/vendor/isotope-layout/isotope.pkgd.min.js" %}"></script>
+  <script src="{% static "landing/assets/vendor/php-email-form/validate.js" %}"></script>
+  <script src="{% static "landing/assets/vendor/purecounter/purecounter.js" %}"></script>
+  <script src="{% static "landing/assets/vendor/swiper/swiper-bundle.min.js" %}"></script>
+  <!-- Template Main JS File -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+    integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Template Main JS File -->
+  <script src="{% static "landing/assets/js/index.js" %}"></script>
+  <script type="text/javascript" src="{% static "landing/assets/js/carousel.js" %}"></script>
+
+</body>
+
+</html>

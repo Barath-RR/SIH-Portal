@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Smart India Hackathon 2022</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Vendor CSS Files -->
+<link href="{% static "login/assets/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "login/assets/vendor/bootstrap-icons/bootstrap-icons.css" %}" rel="stylesheet">
+    <link href="{% static "login/assets/vendor/boxicons/css/boxicons.min.css" %}" rel="stylesheet">
+    <link href="{% static "login/assets/vendor/glightbox/css/glightbox.min.css" %}" rel="stylesheet">
+    <link href="{% static "login/assets/vendor/swiper/swiper-bundle.min.css" %}" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Template Main CSS File -->
+
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <link href="{% static "login/assets/css/nav.css" %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "login/assets/css/login.css" %}">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="{% url "index" %}" class="logo"><img src="{% static "base/assets/img/SMART-INDIA-HACKATHON-2020 edited.png" %}" alt=""
+          class="img-fluid"></a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="dropdown"><a href="#"><span>Discover About SIH</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>SIH 2022</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">About SIH 2022</a></li>
+                  <li><a href="#">SIH 2022 Process Flow</a></li>
+                  <li><a href="#">SIH 2022 Themes</a></li>
+                  <li><a href="#">Problem Statements</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>News & Media</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>News Updates</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Address by PM</a></li>
+                  <li><a href="#">Press Conference</a></li>
+                  <li><a href="#">Speech and Interviews</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Social Wall</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Message</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#">Other Hackathons</a></li>
+          <li><a class="nav-link scrollto " href="#">Announcement</a></li>
+          <li><a class="nav-link scrollto" href="#">Support</a></li>
+          <li><a href="#" class="nav-link"><button class="btn">Login<i class="fa fa-angle-right"></i></button></a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+
+  <!-- body -->
+{% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="alert alert-danger" style="position: absolute; top: 15%; width: 100%; display: flex; align-items: center; justify-content: center;">{{ message }}</div>
+                    {% else %}
+                    <div class="alert alert-success">{{ message }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+  <div class="login-container">
+
+
+    <img src="{% static "login/assets/img/undraw_login_re_4vu2.svg" %}" alt="" srcset="">
+      <form method="post">
+    <div class="login-form">
+
+      <h3>LOGIN</h3>
+        {% csrf_token %}
+      <input type="email" class="form-control" name="login-email" id="email-field" placeholder="Email">
+      <input type="password" class="form-control" name="login-password" id="" placeholder="Password">
+      <input class="btn btn-primary" type="submit" value="Login">
+        <a href="{% url "password_reset" %}" style="text-decoration: none;">Forgot Password?</a>
+        <br><br>
+        <a href="{% url "register-psc" %}" style="text-align: center; ">Click
+                            Here</a> to create an account.
+    </div>
+</form>
+
+  </div>
+
+  <!-- body end -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>CONTACT US</h3>
+            <p>
+              <strong>Phone:</strong> +91 20 40130777<br>
+              <strong>Email:</strong> <a href="mailto:sih@aicte-india.org">sih@aicte-india.org</a><br>
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>FOLLOW US</h4>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/SIH_2020" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/SmartIndiaHackathon2020/" class="facebook" target="_blank"><i
+                  class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/sih_2020/" class="instagram" target="_blank"><i
+                  class="bx bxl-instagram"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span> 2022 Smart India Hackathon.</span></strong> .All rights reserved
+      </div>
+      <div class="credits">
+        <a href="#">Smart India Hackathon App Download</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+ <script src="{% static "base/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "base/assets/vendor/glightbox/js/glightbox.min.js" %}"></script>
+  <script src="{% static "base/assets/vendor/isotope-layout/isotope.pkgd.min.js" %}"></script>
+  <script src="{% static "base/assets/vendor/php-email-form/validate.js" %}"></script>
+  <script src="{% static "base/assets/vendor/purecounter/purecounter.js" %}"></script>
+  <script src="{% static "base/assets/vendor/swiper/swiper-bundle.min.js" %}"></script>
+  <!-- Template Main JS File -->
+  <script src="{% static "base/assets/js/index.js" %}"></script>
+
+
+</body>
+
+</html>

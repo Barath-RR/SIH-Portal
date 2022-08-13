@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title> Dashboard </title>
+    
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "dashboard.css" %}">
+</head>
+<body>
+<div class="sidebar">
+
+
+              <div class="container d-flex align-items-center justify-content-between">
+                <div class="col px-md-5 ">
+                <img src="{% static 'assets/img/SMART-INDIA-HACKATHON-2020.png' %}" style="max-width: 151px;" >
+              </div>
+            </div>
+    <ul class="nav-links">
+        <li>
+            <a href="{% url "psc-dashboard" %}" class="{% if title == "SMART INDIA HACKATHON 2022" %}active{% endif %}">
+                <i class='bx bx-grid-alt'></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url "my-profile" %}" class="{% if title == "MY PROFILE" %}active{% endif %}">
+                <i class='bx bx-box'></i>
+                <span class="links_name">My profile</span>
+            </a>
+
+        </li>
+        <li>
+            <a href="{% url "nodal" %}" class="{% if title == "NODAL OFFICER NOMINATION" %}active{% endif %}">
+                <i class='bx bx-list-ul'></i>
+                <span class="links_name">Nodal Officer</span>
+            </a>
+
+        </li>
+        <li>
+            <a href="{% url "addps" %}" class="{% if title == "CREATE PROBLEM STATEMENT" %}active{% endif %}">
+                <i class='bx bx-pie-chart-alt-2'></i>
+                <span class="links_name">Create<br>Problem statement</span>
+            </a>
+
+        </li>
+        <li>
+            <a href="{% url "viewps" %}" class="{% if title == "VIEW PROBLEM STATEMENT" %}active{% endif %}">
+                <i class='bx bx-coin-stack'></i>
+                <span class="links_name">View<br>Problem Statement</span>
+            </a>
+
+        </li>
+
+        <li>
+            <a href="#">
+                <i class='bx bx-book-alt'></i>
+                <span class="links_name">Notification</span>
+            </a>
+
+        </li>
+        <li>
+            <a href="{% url "email_verification" %}" class="{% if title == "VERIFY EMAIL" %}active{% endif %}">
+                <i class='bx bx-envelope'></i>
+                <span class="links_name">Verify<br>Email Address</span>
+            </a>
+
+        </li>
+        <li class="log_out">
+            <a href="{% url "logout" %}">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">Log out</span>
+            </a>
+        </li>
+        </ul>
+    </ul>
+</div>
+<div class="nav-bar">
+    <nav class="nav-section">
+        <div class="sidebar-button">
+            <i class='bx bx-menu sidebarBtn'></i>
+            <span class="dashboard">
+                {% if title %}
+                    {{ title }}
+                    {% else %}
+                    Smart India Hackathon 2022
+                {% endif %}
+            </span>
+        </div>
+        <div class="profile-details">
+            <div class="dropdown">
+                <button class="dropbtn">{{user}}</button>
+                <div class="dropdown-content">
+                  <a href="{% url "change-password" %}">Change password</a>
+                  <a href="{% url "logout" %}">Logout</a>
+                </div>
+              </div>
+        </div>
+    </nav>
+</div>
+<div>
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="alert alert-danger">{{ message }}</div>
+                    {% else %}
+                    <div class="alert alert-success">{{ message }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% block content %}{% endblock %}
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script>
+    </body>
+    </html>

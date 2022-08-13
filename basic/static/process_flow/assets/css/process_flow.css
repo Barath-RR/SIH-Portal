@@ -1,0 +1,166 @@
+:root {
+    --step1-triangle-color: #8ec254;
+    --step2-triangle-colot: #3cba9d;
+    --step3-triangle-colot: #39afdd;
+    --step4-triangle-colot: #4c88de;
+    --step5-triangle-colot: #977cdd;
+    --step6-triangle-colot: #f75700;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.process-flow-container {
+    position: relative;
+    margin-top: 8%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.process-flow-container .step {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    width: 250px;
+    height: 500px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: start;
+    align-items: center;
+    padding: 1%;
+    margin-left: 1%;
+    margin-top: 1%;
+    border-radius: 50px;
+}
+
+.process-flow-container .step img {
+    width: 25%;
+    height: auto;
+}
+
+@media screen and (max-width: 500px) {
+    .process-flow-container .step {
+        position: relative;
+        width: 250px;
+        height: 500px;
+        background-color: rebeccapurple;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 1%;
+        margin-left: 1%;
+        margin-top: 1%;
+        border-radius: 20px;
+    }
+}
+
+.triangle {
+	position: absolute;
+	background-color: orange;
+	text-align: left;
+    transform: rotate(60deg);
+    top: -15%;
+    left: -7px;
+}
+.triangle:before,
+.triangle:after {
+	content: '';
+	position: absolute;
+	background-color: inherit;
+}
+.triangle,
+.triangle:before,
+.triangle:after {
+	width:  100px;
+	height: 100px;
+	border-top-right-radius: 30%;
+}
+
+.triangle {
+	transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
+}
+.triangle:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+}
+.triangle:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+}
+
+.img-row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.step1-triangle-color {
+    background-color: #8ec254;
+}
+
+.step2-triangle-color {
+    background-color: #3cba9d;
+}
+
+.step3-triangle-color {
+    background-color: #39afdd;
+}
+
+.step4-triangle-color {
+    background-color: #4c88de;
+}
+
+.step5-triangle-color {
+    background-color: #977cdd;
+}
+
+.step6-triangle-color {
+    background-color: #f75700;
+}
+
+.step1-p-color {
+    color: #8ec254;
+    margin-top: 20%;
+}
+
+.step2-p-color {
+    color: #3cba9d;
+    margin-top: 20%;
+}
+
+.step3-p-color {
+    color: #39afdd;
+    margin-top: 20%;
+}
+
+.step4-p-color {
+    color: #4c88de;
+    margin-top: 20%;
+}
+
+.step5-p-color {
+    color: #977cdd;
+    margin-top: 20%;
+}
+
+.step6-p-color {
+    color: #f75700;
+    margin-top: 20%;
+}
+
+.step .number {
+    font-size: 50px;
+    position: absolute;
+    top: -7%;
+    left: 20%;
+}

@@ -1,0 +1,67 @@
+{% extends "base_problemstatementcreator.html" %}
+{% load static %}
+{% block content %}
+<!-- Problem statement view -->
+<section class="home-section">
+<div class="psv">
+    <div class="container">
+        <div style="height: 100%; width:100%; display: flex;  justify-content: center; flex-direction: column;">
+            <ul class="responsive-table">
+                <li class="table-header">
+                    <div class="col col-1">PS. No</div>
+                    <div class="col col-2">Title</div>
+                    <div class="col col-3">Description by</div>
+                    <div class="col col-4">dataset file</div>
+                    <div class="col col-5">Youtube link</div>
+                    <div class="col col-6">Category</div>
+                    <div class="col col-7">Domain Bucket</div>
+                    <div class="col col-8">Technology</div>
+                    <div class="col col-9">update</div>
+                    <div class="col col-10">delete</div>
+                </li>
+                {% for prob_stat in prob_stats %}
+                    <li class="table-row {% if prob_stat.is_rejected %}table-row-rejected{% elif prob_stat.is_approved %}table-row-accepted{% endif %}">
+                        <div class="col col-1" data-label="Ps. Id">{{ prob_stat.id }}</div>
+                        <div class="col col-2" data-label="Title">{{ prob_stat.title }}</div>
+                        <div class="col col-3" data-label="description">{{ prob_stat.description }}</div>
+                        <div class="col col-4" data-label="dataset_file">
+                            {% if prob_stat.dataset_file %}
+                                <a href="{{ prob_stat.dataset_file }}">Dataset File</a>
+                            {% else %}
+                                No Dataset Submitted
+                            {% endif %}</div>
+                        <div class="col col-5" data-label="youtube-link">{% if prob_stat.youtube_link %}
+                            <a href="{{ prob_stat.youtube_link }}">Link</a>
+                        {% else %}
+                            No URL Submitted
+                        {% endif %}
+                        </div>
+                        <div class="col col-6" data-label="category">{{ prob_stat.category }}</div>
+                        <div class="col col-7" data-label="domain-bucket">{{ prob_stat.domain_bucket }}</div>
+                        <div class="col col-8" data-label="technology">{{ prob_stat.technology }}</div>
+                        <div class="col col-9" data-label="update"><a href="{% url 'ps-update' prob_stat.id %}">
+                            <button class="btn btn-info">{% if prob_stat.is_rejected %}Reopen{% else %}Update{% endif %}</button>
+                        </a></div>
+                        <div class="col col-10" data-label="delete"><a href="{% url 'ps-delete' prob_stat.id %}">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </a></div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+            sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else
+            sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+</script>
+{% endblock %}

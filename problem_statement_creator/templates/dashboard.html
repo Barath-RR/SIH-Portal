@@ -1,0 +1,125 @@
+{% extends "base_problemstatementcreator.html" %}
+{% block content %}
+<section class="home-section">
+
+
+    <div class="home-content">
+        <div class="overview-boxes">
+            <div class="box blue">
+                <div class="right-side">
+                    <div class="box-topic">Submitted Problem Statements</div>
+                    <div class="number">{{ submitted_problem_statements }}</div>
+                </div>
+            </div>
+            <div class="box green">
+                <div class="right-side">
+                    <div class="box-topic">Approved Problem Statements</div>
+                    <div class="number">{{ approved_problem_statements }}</div>
+                </div>
+            </div>
+            <div class="box red">
+                <div class="right-side">
+                    <div class="box-topic">Rejected Problem Statements</div>
+                    <div class="number">{{ rejected_problem_statements }}</div>
+                    <div class="indicator">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row mx-md-n5">
+    <div class="col px-md-7"><div class="p-3">
+        <div class="row container">
+            <div class="col-xl-12 col-md-11">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="m-b-45 text-center"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius text-center" alt="User-Profile-Image"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <h6 class="m-b-20 p-b-5 b-b-default text-center f-w-600">User Information</h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-8 text-center f-w-600">Username</p>
+                                        <h6 class="text-muted text-center f-w-400">{{ user.name }}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 text-center f-w-600">Email</p>
+                                        <h6 class="text-muted text-center f-w-400">{{ user.email }}</h6>
+                                    </div>
+                                    <br>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 text-center f-w-600">Phone</p>
+                                        <h6 class="text-muted text-center f-w-400">{{ user.mobile }}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 text-center f-w-600">Organisation</p>
+                                        <h6 class="text-muted text-center f-w-400">{{ user.organization }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="col px-md-7"><div class="p-3">
+        <div class="row container">
+            <div class="col-xl-12 col-md-11">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="m-b-45 text-center"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius text-center" alt="User-Profile-Image"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <h6 class="m-b-20 p-b-5 b-b-default text-center f-w-600">Nodal Officer Information</h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-8 text-center f-w-600">Username</p>
+                                        <h6 class="text-muted text-center f-w-400">{{ nodal.name }}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 text-center f-w-600">Email</p>
+                                        <h6 class="text-muted text-center f-w-400">{{ nodal.email }}</h6>
+                                    </div>
+                                    <br>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 text-center f-w-600">Phone</p>
+                                        <h6 class="text-muted text-center f-w-400">{{ nodal.mobile }}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 text-center f-w-600">Organisation</p>
+                                        <h6 class="text-muted text-center f-w-400">{{ nodal.organization }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<br>
+
+<div class="text-center">
+<a href="{% url 'my-profile' %}"><button type="button" class="btn btn-success">Edit Profile </button></a>
+<a href="{% url 'nodal' %}"><button type="button" class="btn btn-success">Edit Nodal Officer Details</button></a>
+</div>
+</section>
+
+{% endblock content %}
+
+

@@ -1,0 +1,14 @@
+{% extends "basetemplate.html" %}
+{% block content %}
+    <div class="d-flex align-items-center justify-content-center mw-100" style="padding-top: 10%; height: 61vh; flex-direction: column;">
+    <h2>Verify Your Email Address</h2>
+        <br>
+        <p>Check your mail for an OTP.</p>
+        <form method="post" class="d-flex align-items-center justify-content-center " style="flex-direction: column">
+        {% csrf_token %}
+        <input type="text" name="otp" class="form-control-lg">
+            <br>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+{% endblock %}

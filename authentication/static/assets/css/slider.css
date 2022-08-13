@@ -1,0 +1,30 @@
+.slider{
+    width: 80vw !important;
+    height: 50vh;
+    display: flex;
+}
+.slider .card{
+    flex: 1;
+    margin: 0 10px;
+    background: #fff;
+}
+
+.card .content .btn{
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+}
+.card .content .btn button{
+    background: #e74c3c;
+    color: #000;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.card .content .btn button:hover{
+    transform: scale(0.9);
+}

@@ -1,0 +1,852 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>About SIH 2022</title>
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="{% static "process_flow/assets/vendor/bootstrap/css/bootstrap.min.css" %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static "process_flow/assets/vendor/bootstrap-icons/bootstrap-icons.css" %}"
+      rel="stylesheet"
+    />
+    <link href="{% static "process_flow/assets/vendor/boxicons/css/boxicons.min.css" %}" rel="stylesheet" />
+    <link
+      href="{% static "process_flow/assets/vendor/glightbox/css/glightbox.min.css" %}"
+      rel="stylesheet"
+    />
+    <link href="{% static "process_flow/assets/vendor/swiper/swiper-bundle.min.css" %}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="{% static "process_flow/assets/css/org.css" %}" />
+    <link rel="stylesheet" href="{% static "process_flow/assets/css/index.css" %}" />
+    <link rel="stylesheet" href="{% static "process_flow/assets/css/themes.css" %}" />
+    <link rel="stylesheet" href="{% static "process_flow/assets/css/header.css" %}" />
+    <link rel="stylesheet" href="{% static "process_flow/assets/css/process_flow.css" %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="{% url "index" %}" class="logo"><img src="{% static "process_flow/assets/img/SMART-INDIA-HACKATHON-2020 edited.png" %}" alt=""
+          class="img-fluid"></a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="dropdown"><a href="#"><span>Discover About SIH</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>SIH 2022</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="{% url "process_flow" %}">About SIH 2022</a></li>
+                  <li><a href="{% url "process_flow" %}#process-flow-cards">SIH 2022 Process Flow</a></li>
+                  <li><a href="{% url "process_flow" %}#themes-space">SIH 2022 Themes</a></li>
+                  <li><a href="{% url "process_flow" %}#">Problem Statements</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>News & Media</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>News Updates</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Address by PM</a></li>
+                  <li><a href="#">Press Conference</a></li>
+                  <li><a href="#">Speech and Interviews</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Social Wall</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Message</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#">Other Hackathons</a></li>
+          <li><a class="nav-link scrollto " href="#">Announcement</a></li>
+          <li><a class="nav-link scrollto" href="#">Support</a></li>
+          <li>{% if user.is_authenticated %}
+                <a href="{% url 'redirect' %}" class="nav-link"><button class="btn">{{ user }}<i class="fa fa-angle-right"></i></button></a>
+              {% else %}
+              <a href="{% url 'login' %}" class="nav-link"><button class="btn">Login<i class="fa fa-angle-right"></i></button></a>
+          {% endif %}</li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <body>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="{% static "process_flow/images/about-sih-banner.jpg" %}"
+            alt="Slide One"
+            width="1100"
+            height="500"
+          />
+          <div class="carousel-caption">
+            <h3 class="social-media-heading">SMART INDIA HACKATHON 2022</h3>
+            <br />
+            <h5>Software & Hardware edition</h5>
+            <br />
+            <p class="contact-us-para">
+              Share your problems and get them solved by students across India
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="banner-bottom-color-div-abt">
+        <div class="overview-container">
+          <div class="overview-container-text">
+            <div class="abt-overview">
+              <h2>overview</h2>
+              <p>
+                Smart India Hackathon 2019 is a nationwide initiative to provide
+                students a platform to solve some of the pressing problems we
+                face in our daily lives, and thus inculcate a culture of product
+                innovation and a mindset of problem solving.
+              </p>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="abt-stu">
+                  <h3>5 Lakh+</h3>
+                  <p>students</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="abt-location">
+                  <h3>65+</h3>
+                  <p>Locations</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overview-video">
+            <div class="video-box">
+              <iframe
+                width="300"
+                height="250"
+                src="https://www.youtube.com/embed/0uzm5m1Uq1U"
+              >
+              </iframe>
+              <p>Shri Narendra Modi</p>
+              <p class="video-bottom-para">Hon'ble Prime Minister of India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about" class="about section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="row no-gutters bg">
+          <div class="content col-xl-5 d-flex align-items-stretch">
+            <div class="content">
+              <br /><br /><br /><br /><br />
+              <h3>WHY JOIN SIH 2022 ?</h3>
+            </div>
+          </div>
+          <div class="col-xl-7 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div
+                  class="col-md-6 icon-box"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <img class="feature-logo" src="{% static "process_flow/images/ai.png" %}" />
+                  <h4>Innovative Solutions</h4>
+                  <p>
+                    Get innovative solutions to your problems in cost effective
+                    ways Opportunity to be a part of Nation Building Opportunity
+                    to brand your company.
+                  </p>
+                </div>
+                <div
+                  class="col-md-6 icon-box"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <img class="feature-logo" src="{% static "process_flow/images/responsibility.png" %}" />
+                  <h4>Recognition And Visibility</h4>
+                  <p>
+                    Nationally Recognition and visibility for your company
+                    across all premier institutions in India
+                  </p>
+                </div>
+                <div
+                  class="col-md-6 icon-box"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <img class="feature-logo" src="{% static "process_flow/images/teamwork.png" %}" />
+                  <h4>Out-Of-The-Box Solutions</h4>
+                  <p>
+                    Talented youngsters from all over the country offer
+                    out-of-the-box solutions to your problems
+                  </p>
+                </div>
+                <div
+                  class="col-md-6 icon-box"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <img class="feature-logo" src="{% static "process_flow/images/thought.png" %}" />
+                  <h4>Innovation Movement Opportunity</h4>
+                  <p>
+                    Be part of World’s biggest Open Innovation Movement
+                    Opportunity to work with some of the best talents in the
+                    country
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process-flow-cards">
+      <div class="col-md-12">
+        <h2 style="text-align: center">SIH 2022</h2>
+        <h1 style="text-align: center">PROCESS FLOW</h1>
+      </div>
+      <div class="process-flow-container">
+        <div class="step">
+          <div class="triangle step1-triangle-color"></div>
+          <p class="number">1</p>
+          <div class="img-row">
+            <img src="{% static "process_flow/images/thought.png" %}" alt="" srcset="" />
+          </div>
+          <p class="step1-p-color">
+            SIH2022 Software & Hardware Edition: Problem statements submission
+            by Central &State Ministries, Departments, PSUs, Industries & NGOs
+          </p>
+        </div>
+        <div class="step">
+          <div class="triangle step2-triangle-color"></div>
+          <p class="number">2</p>
+          <div class="img-row">
+            <img src="{% static "process_flow/images/review.png" %}" alt="" srcset="" />
+          </div>
+          <p class="step2-p-color">
+            Submission of Problem Statements (PSs) by Central & State
+            Ministries, PSUs, Industries and NGOs on the SIH portal. Review of
+            Submitted PSs & finalization by oncerned committee Publishing
+            finalized PSs
+          </p>
+        </div>
+        <div class="step">
+          <div class="triangle step3-triangle-color"></div>
+          <p class="number">3</p>
+          <div class="img-row">
+            <img src="{% static "process_flow/images/online-registration.png" %}" alt="" srcset="" />
+          </div>
+          <p class="step3-p-color">
+            Registration of College SPOCs on SIH portal Blocking published PSs
+            by SPOCs of Colleges or Institutes Internal campus hackathon to be
+            conducted in each college or institute by their SPOCs on their
+            blocked PSs
+          </p>
+        </div>
+        <div class="step">
+          <div class="triangle step4-triangle-color"></div>
+          <p class="number">4</p>
+          <div class="img-row">
+            <img src="{% static "process_flow/images/hierarchical-structure.png" %}" alt="" srcset="" />
+          </div>
+          <p class="step4-p-color">
+            College SPOC to be responsible to conduct internal hackathon in the
+            campus College to finalise total best 5 teams + 2 waitlisted teams
+            from the internal hackathon. SPOC to recommend the selected teams
+            for SIH 2022 Software edition at SIH portal Out of the 5 selected
+            teams per college, 4 can be chosen from blocked PSs & 1 can be
+            chosen for Student Innovation category
+          </p>
+        </div>
+        <div class="step">
+          <div class="triangle step5-triangle-color"></div>
+          <p class="number">5</p>
+          <div class="img-row">
+            <img src="{% static "process_flow/images/team.png" %}" alt="" srcset="" />
+          </div>
+          <p class="step5-p-color">
+            Team leaders of the selected teams to be registered at the SIH
+            portal to submit ideas Submission of ideas by selected teams against
+            PSs by college SPOC for the SIH2022 Finale Evaluation of submitted
+            ideas
+          </p>
+        </div>
+        <div class="step">
+          <div class="triangle step6-triangle-color"></div>
+          <p class="number">6</p>
+          <div class="img-row">
+            <img src="{% static "process_flow/images/goal.png" %}" alt="" srcset="" />
+          </div>
+          <p class="step6-p-color">Result analysis Publishing Result</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="themes-container" id="themes-space">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h4>Smart India Hackathon's</h4>
+            <h3>THEMES</h3>
+            <h5>No problem is too big... No idea is too small</h5>
+            <div id="themes-cards" class="owl-carousel">
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "process_flow/assets/img/themes/icon_sport.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Fitness & Sports</h3>
+                  <p>
+                    Ideas that can boost fitness activities and assist in
+                    keeping fit.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "process_flow/assets/img/themes/icon_agriculture.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Transportation & Logistics</h3>
+                  <p>
+                    Developing solutions, keeping in mind the need to enhance
+                    the primary sector of India - Agriculture and to manage and
+                    process our agriculture produce.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "process_flow/assets/img/themes/icon_drone.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Robotics & Drones</h3>
+                  <p>
+                    There is a need to design drones and robots that can solve
+                    some of the pressing challenges of India such as handling
+                    medical emergencies, search and rescue operations, etc.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "process_flow/assets/img/themes/icon_heritage.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Heritage & cultural</h3>
+                  <p>
+                    A solution/idea that can boost the current situation of the
+                    tourism industries including hotels, travel and others.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "process_flow/assets/img/themes/icon_technology.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Agriculture, FoodTech & Rural Development</h3>
+                  <p>
+                    Ideas that showcase the rich cultural heritage and
+                    traditions of India.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "process_flow/assets/img/themes/icon_communication.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Smart Automation</h3>
+                  <p>
+                    Ideas focused on the intelligent use of resources for
+                    transforming and advancements of technology with combining
+                    the artificial intelligence to explore more various sources
+                    and get valuable insights.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "process_flow/assets/img/themes/icon_healthcare.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>MedTech, BioTech &amp; HealthTech</h3>
+                  <p>
+                    Cutting-edge technology in these sectors continues to be in
+                    demand. Recent shifts in healthcare trends, growing
+                    populations also present an array of opportunities for
+                    innovation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "process_flow/assets/img/themes/icon_automobiles.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Smart Vehicles</h3>
+                  <p>
+                    Creating intelligent devices to improve commutation sector.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "process_flow/assets/img/themes/icon_waste.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Clean & Green Technology</h3>
+                  <p>
+                    Solutions could be in the form of waste segregation,
+                    disposal, and improve sanitization system.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "landing/assets/img/themes/icon_tourism.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Tourism</h3>
+                  <p>
+                    A solution/idea that can boost the current situation of the
+                    tourism industries including hotels, travel and others.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "landing/assets/img/themes/icon_renewable.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Renewable/sustainable Energy</h3>
+                  <p>
+                    Innovative ideas that help manage and generate renewable
+                    /sustainable sources more efficiently.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "landing/assets/img/themes/icon_security.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Blockchain & Cybersecurity</h3>
+                  <p>
+                    Provide ideas in a decentralized and distributed ledger
+                    technology used to store digital information that powers
+                    cryptocurrencies and NFTs and can radically change multiple
+                    sectors.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="shadow-effect">
+                  <img
+                    src="{% static "landing/assets/img/themes/icon_education.png" %}"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="theme-details">
+                  <h3>Miscellaneous</h3>
+                  <p>
+                    Technology ideas in tertiary sectors like Hospitality,
+                    Financial Services, Entertainment and Retail.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="org">
+      <div class="tabs">
+        <div class="tab-2">
+          <label for="tab2-1">Organizing Committee</label>
+          <input id="tab2-1" name="tabs-two" type="radio" checked="checked" />
+          <div>
+            <div class="container-tabs">
+              <div class="at-grid" data-column="3">
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/anil-sahasrabudhe.png" %}" />
+                    </div>
+                    <div class="at-user__name">Prof. Anil Sahasrabudhe</div>
+                    <div class="at-user__title">
+                      Chairman, AICTE <br />
+                      Chairman, Organizing Committee <br />
+                      Smart India Hackathon 2022
+                    </div>
+                    <ul class="at-social"></ul>
+                  </div>
+                </div>
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/Anand_Deshpande.png" %}" />
+                    </div>
+                    <div class="at-user__name">Dr. Anand Deshpande</div>
+                    <div class="at-user__title">
+                      Chairman and MD, Persistent Systems
+
+                      <br />
+                      Co-Chairman, Organizing Committee
+
+                      <br />
+                      Smart India Hackathon 2022
+                    </div>
+                  </div>
+                </div>
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/face.png" %}" />
+                    </div>
+                    <div class="at-user__name">Mr. Rakesh Ranjan</div>
+                    <div class="at-user__title">
+                      Additional Secretary (TE), MoE <br />
+
+                      Member, Organizing Committee <br />
+
+                      Smart India Hackathon 2022
+                    </div>
+                  </div>
+                </div>
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/abhay_jere.png" %}" />
+                    </div>
+                    <div class="at-user__name">Dr. Abhay Jere</div>
+                    <div class="at-user__title">
+                      CIO,MoE's Innovation Cell <br />
+
+                      Member, Organizing Committee <br />
+
+                      Smart India Hackathon 2022
+                    </div>
+                  </div>
+                </div>
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/mohit-gambhir.png" %}" />
+                    </div>
+                    <div class="at-user__name">Dr. Mohit Gambhir</div>
+                    <div class="at-user__title">
+                      Director, MoE's Innovation Cell <br />
+
+                      Secretary, Organizing Committee <br />
+
+                      Smart India Hackathon 2022
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-2">
+          <label for="tab2-2">Executive Committee</label>
+          <input id="tab2-2" name="tabs-two" type="radio" />
+          <div>
+            <div class="width" style="width: 100vw; height: 1px"></div>
+            <div class="container-tabs">
+              <div class="at-grid" data-column="3">
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/mohit-gambhir.png" %}" />
+                    </div>
+                    <div class="at-user__name">Dr. Mohit Gambhir</div>
+                    <div class="at-user__title">
+                      Director, MoE's Innovation Cell <br />
+
+                      Secretary, Organizing Committee <br />
+
+                      Smart India Hackathon 2022
+                    </div>
+                  </div>
+                </div>
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/face.png" %}" />
+                    </div>
+                    <div class="at-user__name">Mr. Nitin Bhide</div>
+                    <div class="at-user__title">
+                      Co-Founder, D10X <br />
+
+                      Member, Executive Committee <br />
+
+                      Smart India Hackathon 2022
+                    </div>
+                    <ul class="at-social"></ul>
+                  </div>
+                </div>
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/Pratap_S.gif" %}" />
+                    </div>
+                    <div class="at-user__name">Mr. Pratap Sanap</div>
+                    <div class="at-user__title">
+                      Associate Principal Data Scientist, LTI <br />
+
+                      Member, Executive Committee <br />
+
+                      Smart India Hackathon 2022
+                    </div>
+                  </div>
+                </div>
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/PN.jpg" %}" />
+                    </div>
+                    <div class="at-user__name">Mr. Praful Nikam</div>
+                    <div class="at-user__title">
+                      President,Y4D Foundation <br />
+
+                      Member, Executive Committee <br />
+
+                      Smart India Hackathon 2022
+                    </div>
+                  </div>
+                </div>
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/face.png" %}" />
+                    </div>
+                    <div class="at-user__name">Mr. Sachin Gaur</div>
+                    <div class="at-user__title">
+                      Director operations, Innovatio Curis <br />
+
+                      Member, Executive Committee <br />
+
+                      Smart India Hackathon 2022
+                    </div>
+                  </div>
+                </div>
+
+                <div class="at-column">
+                  <div class="at-user">
+                    <div class="at-user__avatar">
+                      <img src="{% static "process_flow/assets/img/committee/face.png" %}" />
+                    </div>
+                    <div class="at-user__name">Dr. Pradyoy Koley</div>
+                    <div class="at-user__title">
+                      Assistant Director, MoE's Innovation Cell <br />
+
+                      Convener, Executive Committee <br />
+
+                      Smart India Hackathon 2022
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="organizing-committee">
+      <div class="container">
+        <div class="row organizing-head">
+          <div class="col-lg-12">
+            <h2>The Supporters of SIH 2022</h2>
+            <p><span>Organizers</span></p>
+            <ul class="logo-first-box">
+              <li class="mhrdLandingPadd">
+                <img src="{% static "process_flow/images/mhrd-logo.jpg" %}" />
+              </li>
+              <li><img src="{% static "process_flow/images/mhrd-inno-cell-logo.jpg" %}" /></li>
+              <li>
+                <img src="{% static "process_flow/images/aicte-logo.jpg" %}" class="img-responsive" />
+              </li>
+              <li><img src="{% static "process_flow/images/persistent-logo.jpg" %}" /></li>
+              <li><img src="{% static "process_flow/images/tm-logo.jpg" %}" /></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 footer-contact">
+              <h3>CONTACT US</h3>
+              <p>
+                <strong>Phone:</strong> +91 20 40130777<br />
+                <strong>Email:</strong>
+                <a href="mailto:sih@aicte-india.org">sih@aicte-india.org</a
+                ><br />
+              </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links"></div>
+
+            <div class="col-lg-3 col-md-6 footer-links"></div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>FOLLOW US</h4>
+              <div class="social-links mt-3">
+                <a
+                  href="https://twitter.com/SIH_2020"
+                  class="twitter"
+                  target="_blank"
+                  ><i class="bx bxl-twitter"></i
+                ></a>
+                <a
+                  href="https://www.facebook.com/SmartIndiaHackathon2020/"
+                  class="facebook"
+                  target="_blank"
+                  ><i class="bx bxl-facebook"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/sih_2020/"
+                  class="instagram"
+                  target="_blank"
+                  ><i class="bx bxl-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container py-4">
+        <div class="copyright">
+          &copy; Copyright
+          <strong><span> 2020 Smart India Hackathon.</span></strong> .All rights
+          reserved
+        </div>
+        <div class="credits">
+          <a href="#">Smart India Hackathon App Download</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- js -->
+
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+      integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="{% static "process_flow/assets/js/index.js" %}"></script>
+    <script type="text/javascript" src="{% static "process_flow/assets/js/carousel.js" %}"></script>
+  </body>
+</html>

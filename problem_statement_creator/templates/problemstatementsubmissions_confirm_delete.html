@@ -1,0 +1,29 @@
+{% extends "base_problemstatementcreator.html" %}
+{% load static %}
+{% block content %}
+<div class="delete-container psc home-section">
+    <div class="inner-delete">
+        <form action="" method="post" class="form-container">
+            {% csrf_token %}
+            <img src="{% static "img/delete.png" %}" height="100px" width="100px" alt="" srcset="">
+            <p>Are you sure?</p>
+            <div class="delete-buttons">
+                <button class="delete" type="submit">Delete</button>
+                <button type="button" class="cancel" onclick="location.href={% url "viewps" %}">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+            sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else
+            sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,179 @@
+{% extends "base_problemstatementcreator.html" %}
+{% load static %}
+{% block content %}
+<!-- problem statemnt creation -->
+
+<section class="psc home-section">
+    <form class="needs-validation" enctype ="multipart/form-data" style="display:flex; justify-content: center; align-items: center; max-width: 50vw;" 
+          novalidate method="POST">
+        {% csrf_token %}
+        <div class="container form-group">
+            <h3 style="text-align: center;">PROBLEM STATEMENT SUBMISSION</h3>
+
+            <br><br>
+
+            <input
+                    style="background-color: rgba(218, 202, 202, 0.438);"
+                    class="form-control form-control-lg"
+                    type="text"
+                    maxlength="250"
+                    placeholder="Title"
+                    name="title"
+                    required
+            />
+            <div class="invalid-feedback">Provide Title</div>
+            <br><br>
+
+            <div class="form-group">
+                <textarea class="form-control" style="background-color: rgba(218, 202, 202, 0.438);" rows="5"
+                          id="Description" minlength="50" maxlength="1000" name="des" placeholder="Description" required></textarea>
+                <div class="invalid-feedback">Description should containg minimum of 50 Characters.</div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col">
+
+                        <input
+                                name="ytlink"
+                                style="background-color: rgba(218, 202, 202, 0.438);"
+                                type="text"
+                                class="form-control form-control-lg"
+                                id="basic-url"
+                                placeholder="Youtube link(If available)"
+                                aria-describedby="basic-addon3"
+                        />
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <select class="form-control form-control-lg"
+                                style="background-color: rgba(218, 202, 202, 0.438);" id="sel1" name="cat" required>
+                            <option value="" selected hidden>Category</option>
+                            <option value="Hardware">Hardware</option>
+                            <option value="Software">Software</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a category.</div>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <select name="dombuck" class="form-control form-control-lg"
+                                style="background-color: rgba(218, 202, 202, 0.438);" id="sel1" required>
+                            <option value="" selected hidden>Domain bucket</option>
+                            <option value="Agriculture and Rural Development">Agriculture and Rural Development</option>
+                            <option value="Clean Water">Clean Water</option>
+                            <option value="Robotics & Drones">Robotics & Drones</option>
+                            <option value="Healthcare & Biomedical Devices">Healthcare & Biomedical Devices</option>
+                            <option value="Energy / Renewable Energy">Energy / Renewable Energy</option>
+                            <option value="Security & Surveillance">Security & Surveillance</option>
+                            <option value="Smart Communication">Smart Communication</option>
+                            <option value="Smart Vehicles">Smart Vehicles</option>
+                            <option value="Software - Mobile App development">Software - Mobile App development</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                            <option value="Software - Web App development">Software - Web App development</option>
+                            <option value="Travel and Tourism">Travel and Tourism</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Life Sciences">Life Sciences</option>
+                            <option value="Waste Management">Waste Management</option>
+                            <option value="Food Technology">Food Technology</option>
+                            <option value="Smart Education">Smart Education</option>
+                            <option value="Smart Cities">Smart Cities</option>
+                            <option value="Sports and Fitness">Sports and Fitness</option>
+                            <option value="Smart Textiles">Smart Textiles</option>
+                            <option value="Sustainable Environment">Sustainable Environment</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a domain bucket.</div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <select name="tech" class="form-control form-control-lg"
+                                style="background-color: rgba(218, 202, 202, 0.438);" id="sel1" required>
+                            <option value="">Select Technology Bucket</option>
+                            <option value="IoT">IoT</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="Machine Learning">Machine Learning</option>
+                            <option value="Artificial Intelligence">Artificial Intelligence</option>
+                            <option value="Mechatronics">Mechatronics</option>
+                            <option value="Others">Others</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a Technology Bucket.</div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <p style="font-weight: bold;">Datasets(If available):</p>
+            <div class="container" style="width: 100%; margin-top: 0px">
+                <input name="datafile" type="file" accept="application/pdf" class="form-control-file border"><br>
+                <div style="display: flex; align-items: center; width: 100%; justify-content: space-evenly">
+                <input type="submit"  id="edit-submit" name="op"
+                       value="Submit"
+                       class="form-control-login btn btn-success btn-lg"
+                >
+                <input type="reset" id="edit-submit" name="datafile"
+                       value="Reset "
+                       class="form-control-login btn btn-success btn-lg"
+                >
+                    </div>
+            </div>
+        </div>
+    </form>
+</section>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous">
+</script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous">
+</script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous">
+</script>
+<script>
+    "use strict";
+    window.addEventListener(
+        "load",
+        function () {
+            var forms = document.getElementsByClassName("needs-validation");
+            var validation = Array.prototype.filter.call(
+                forms,
+                function (form) {
+                    form.addEventListener(
+                        "submit",
+                        function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add("was-validated");
+                        },
+                        false
+                    );
+                }
+            );
+        },
+        false
+    );
+</script>
+
+<script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+            sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else
+            sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+</script>
+{% endblock %}
